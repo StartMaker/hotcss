@@ -7,9 +7,6 @@ const LessPluginFunctions = require('less-plugin-functions');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const webpack = require('webpack');
-var loading = {
-    html: fs.readFileSync(path.join(__dirname,'./src/components/loading/index.html'))
-};
 module.exports = {
     mode: "development",
     entry: {
@@ -30,7 +27,7 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         hot: true,
-        host: '10.20.0.52',
+        host: '10.20.0.71',
         progress: true,
         inline: true,
         port: 3000,
@@ -137,8 +134,8 @@ module.exports = {
             inject: true,
             // favicon: './src/App/static/image/theme.jpg',
             filename: "index.html",
-            hash: true,
-            loading: loading
+            hash: true
+            // loading: loading
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin()

@@ -20,6 +20,9 @@ class Entry extends React.Component{
             info: info
         });
     }
+    componentWillMount(){
+        console.log(document.getElementById('root')._reactRootContainer);
+    }
     render() {
         return (
             <Router>
